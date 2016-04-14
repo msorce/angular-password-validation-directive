@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>password validator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <style>
+      ul {
+        background-color: #eee;
+        width: 400px;
+      }
+      li {
+        font-weight: bold;
+        color: red;
+      }
+      li.true {
+        color: limegreen;
+      }
+    </style>
+  </head>
+  <body ng-app='app' class="container">
+    <div ng-controller="mainCtrl">
+      <h1>{{title}}</h1>
+      <hr>
+      <p>
+        please enter your password
+      </p>
+      <input type="text" name="name" ng-model="password" value="" pw-val>
+      <h3>Your password must meet the following requirements</h3>
+      <ul ng-class="showPopup">
+        <li ng-class="passwordObj.len.toString()"> at least 6 characters: {{passwordObj.len}}</li>
+        <li ng-class="passwordObj.letter.toString()"> at least 1 letter: {{passwordObj.letter}}</li>
+        <li ng-class="passwordObj.num.toString()"> at least 1 number: {{passwordObj.num}}</li>
+        <li ng-class="passwordObj.specChar.toString()"> at least 1 special character: {{passwordObj.specChar}}</li>
+      </ul>
+    </div>
+
+
+
+
+
+
+
+    <script src="scripts/app.js" charset="utf-8"></script>
+  </body>
+</html>
